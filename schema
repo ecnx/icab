@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$#" -ne 1 ]; then
+    echo 'usage: schema prefix'
+    exit 1
+fi
+grep '^\ [|\]\-size:\ ' | awk '{print $6",'"$1/"'"$10}'
